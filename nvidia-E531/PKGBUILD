@@ -38,7 +38,6 @@ package() {
   
     gzip "${pkgdir}/usr/lib/modules/${_extramodules}/kernel/drivers/video/"*.ko
     install -d -m755 "${pkgdir}/usr/lib/modprobe.d"
-    echo "nvidia" >> "/etc/modules-load.d/nvidia.conf"
     echo "blacklist nouveau" >> "${pkgdir}/usr/lib/modprobe.d/nvidia-E531.conf"
     echo "blacklist nvidiafb" >> "${pkgdir}/usr/lib/modprobe.d/nvidia-E531.conf"
     install -D -m644 "${srcdir}/${_pkg}/LICENSE" "${pkgdir}/usr/share/licenses/nvidia-E531/LICENSE"
