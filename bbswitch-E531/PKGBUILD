@@ -1,5 +1,6 @@
 pkgname=bbswitch-E531
 _basename=bbswitch
+groups=('ThinkPad-E531')
 pkgver=0.8
 _extramodules=extramodules-4.0-E531 # Don't forget to update bbswitch-lts.install
 pkgrel=1

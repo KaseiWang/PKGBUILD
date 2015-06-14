@@ -1,4 +1,5 @@
 pkgname=nvidia-E531
+groups=('ThinkPad-E531')
 pkgver=352.09
 _extramodules=extramodules-4.0-E531
 pkgrel=1

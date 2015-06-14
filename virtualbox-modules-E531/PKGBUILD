@@ -1,5 +1,6 @@
 pkgbase=virtualbox-modules-E531
 pkgname=('virtualbox-host-modules-E531' 'virtualbox-guest-modules-E531')
+groups=('ThinkPad-E531')
 pkgver=4.3.28
 pkgrel=1
 arch=('i686' 'x86_64')
