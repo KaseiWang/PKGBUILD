@@ -6,7 +6,6 @@ pkgver=4.0.5
 pkgrel=1
 groups=('ThinkPad-E531')
 arch=('x86_64')
-MAKEFLAGS='-j4'
 url="http://www.hurrdurr.org/"
 license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc')
