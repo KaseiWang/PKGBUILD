@@ -2,17 +2,17 @@ pkgbase=virtualbox-modules-E531
 pkgname=('virtualbox-host-modules-E531' 'virtualbox-guest-modules-E531')
 groups=('ThinkPad-E531')
 pkgver=4.3.28
-pkgrel=1
+pkgrel=2
 arch=('i686' 'x86_64')
 url='http://virtualbox.org'
 license=('GPL')
-makedepends=('linux-E531>=4.0' 'linux-E531<4.1'
-             'linux-E531-headers>=4.0' 'linux-E531-headers<4.1'
+makedepends=('linux-E531>=4.1' 'linux-E531<4.2'
+             'linux-E531-headers>=4.1' 'linux-E531-headers<4.2'
              "virtualbox-host-dkms>=$pkgver"
              "virtualbox-guest-dkms>=$pkgver")
 
 # remember to also adjust the .install files and the package deps below
-_extramodules=extramodules-4.0-E531
+_extramodules=extramodules-4.1-E531
 
 build() {
   _kernver=$(cat /usr/lib/modules/$_extramodules/version)
@@ -30,7 +30,7 @@ build() {
 package_virtualbox-host-modules-E531(){
   _kernver=$(cat /usr/lib/modules/$_extramodules/version)
   pkgdesc='Host kernel modules for VirtualBox'
-  depends=('linux-E531>=4.0' 'linux-E531<4.1')
+  depends=('linux-E531>=4.1' 'linux-E531<4.2')
   replaces=('virtualbox-modules-E531')
   conflicts=('virtualbox-modules-E531')
   provides=("virtualbox-host-modules=$pkgver")
@@ -46,7 +46,7 @@ package_virtualbox-guest-modules-E531(){
   _kernver=$(cat /usr/lib/modules/$_extramodules/version)
   pkgdesc='Guest kernel modules for VirtualBox'
   license=('GPL')
-  depends=('linux-E531>=4.0' 'linux-E531<4.1')
+  depends=('linux-E531>=4.1' 'linux-E531<4.2')
   replaces=('virtualbox-modules-E531')
   conflicts=('virtualbox-modules-E531')
   provides=("virtualbox-guest-modules=$pkgver")

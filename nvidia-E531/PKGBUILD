@@ -1,13 +1,13 @@
 pkgname=nvidia-E531
 groups=('ThinkPad-E531')
 pkgver=352.21
-_extramodules=extramodules-4.0-E531
-pkgrel=1
+_extramodules=extramodules-4.1-E531
+pkgrel=2
 pkgdesc="NVIDIA drivers for linux-E531"
 arch=('x86_64')
 url="http://www.nvidia.com/"
-depends=('linux-E531>=4.0' "nvidia-utils=$pkgver" 'libgl')
-makedepends=('linux-E531-headers>=4.0')
+depends=('linux-E531>=4.1' "nvidia-utils=$pkgver" 'libgl')
+makedepends=('linux-E531-headers>=4.1')
 provides=('nvidia')
 license=('custom')
 install=nvidia-E531.install
