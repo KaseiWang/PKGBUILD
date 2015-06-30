@@ -1,8 +1,8 @@
 pkgbase=linux-E531               # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
-_srcname=linux-4.0
-_patchname=patch-4.1
-pkgver=4.1
+_srcname=linux-4.1
+_patchname=patch-4.1.1
+pkgver=4.1.1
 pkgrel=1
 groups=('ThinkPad-E531')
 arch=('x86_64')
@@ -18,8 +18,8 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         'linux.preset'
         'change-default-console-loglevel.patch'
         )
-sha256sums=('0f2f7d44979bc8f71c4fc5d3308c03499c26a824dd311fdf6eef4dee0d7d5991'
-            '47805189bd8e336a5c5a39e9d3e8b085e96192d98b4dc19247105be972e62622'
+sha256sums=('caf51f085aac1e1cea4d00dbbf3093ead07b551fc07b31b2a989c05f8ea72d9f'
+            '48a813fb6795153f6906759501bea9e290db528894d1c0726667efc8e55dd7ad'
             'd47fc8f9e5a5b10b92b4d91b8915900b5fa3789049a899e59284c74ebbe17756'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
