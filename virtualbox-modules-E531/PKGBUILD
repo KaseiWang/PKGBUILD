@@ -1,18 +1,18 @@
-pkgbase=virtualbox-modules-E531
-pkgname=('virtualbox-host-modules-E531' 'virtualbox-guest-modules-E531')
+pkgbase=virtualbox-modules-e531
+pkgname=('virtualbox-host-modules-e531' 'virtualbox-guest-modules-e531')
 groups=('ThinkPad-E531')
 pkgver=4.3.28
 pkgrel=4
 arch=('i686' 'x86_64')
 url='http://virtualbox.org'
 license=('GPL')
-makedepends=('linux-E531>=4.1' 'linux-E531<4.2'
-             'linux-E531-headers>=4.1' 'linux-E531-headers<4.2'
+makedepends=('linux-e531>=4.1' 'linux-e531<4.2'
+             'linux-e531-headers>=4.1' 'linux-e531-headers<4.2'
              "virtualbox-host-dkms>=$pkgver"
              "virtualbox-guest-dkms>=$pkgver")
 
 # remember to also adjust the .install files and the package deps below
-_extramodules=extramodules-4.1-E531
+_extramodules=extramodules-4.1-e531
 
 build() {
   _kernver=$(cat /usr/lib/modules/$_extramodules/version)
@@ -27,14 +27,14 @@ build() {
   dkms --dkmsframework dkms.conf build "vboxguest/$pkgver" -k "$_kernver"
 }
 
-package_virtualbox-host-modules-E531(){
+package_virtualbox-host-modules-e531(){
   _kernver=$(cat /usr/lib/modules/$_extramodules/version)
   pkgdesc='Host kernel modules for VirtualBox'
-  depends=('linux-E531>=4.1' 'linux-E531<4.2')
-  replaces=('virtualbox-modules-E531')
-  conflicts=('virtualbox-modules-E531')
+  depends=('linux-e531>=4.1' 'linux-e531<4.2')
+  replaces=('virtualbox-modules-e531')
+  conflicts=('virtualbox-modules-e531')
   provides=("virtualbox-host-modules=$pkgver")
-  install=virtualbox-host-modules-E531.install
+  install=virtualbox-host-modules-e531.install
 
   cd "dkms/vboxhost/$pkgver/$_kernver/$CARCH/module"
   install -dm755 "$pkgdir/usr/lib/modules/$_extramodules/"
@@ -42,15 +42,15 @@ package_virtualbox-host-modules-E531(){
   find "$pkgdir" -name '*.ko' -exec gzip -9 {} +
 }
 
-package_virtualbox-guest-modules-E531(){
+package_virtualbox-guest-modules-e531(){
   _kernver=$(cat /usr/lib/modules/$_extramodules/version)
   pkgdesc='Guest kernel modules for VirtualBox'
   license=('GPL')
-  depends=('linux-E531>=4.1' 'linux-E531<4.2')
-  replaces=('virtualbox-modules-E531')
-  conflicts=('virtualbox-modules-E531')
+  depends=('linux-e531>=4.1' 'linux-e531<4.2')
+  replaces=('virtualbox-modules-e531')
+  conflicts=('virtualbox-modules-e531')
   provides=("virtualbox-guest-modules=$pkgver")
-  install=virtualbox-host-modules-E531.install
+  install=virtualbox-host-modules-e531.install
 
   cd "dkms/vboxguest/$pkgver/$_kernver/$CARCH/module"
   install -dm755 "$pkgdir/usr/lib/modules/$_extramodules/"

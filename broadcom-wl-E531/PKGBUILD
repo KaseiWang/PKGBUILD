@@ -1,4 +1,4 @@
-pkgname=broadcom-wl-E531
+pkgname=broadcom-wl-e531
 groups=('ThinkPad-E531')
 pkgver=6.30.223.248
 pkgrel=8
@@ -6,8 +6,8 @@ pkgdesc='Broadcom 802.11abgn hybrid Linux networking device driver'
 url='http://www.broadcom.com/support/802.11/linux_sta.php'
 arch=('i686' 'x86_64')
 license=('custom')
-depends=('linux-E531')
-makedepends=('linux-E531-headers')
+depends=('linux-e531')
+makedepends=('linux-e531-headers')
 [[ $CARCH = x86_64 ]] && _arch=_64 || _arch=
 source=("http://www.broadcom.com/docs/linux_sta/hybrid-v35${_arch}-nodebug-pcoem-${pkgver//./_}.tar.gz"
         'modprobe.d'
@@ -23,8 +23,8 @@ sha256sums=('b196543a429c22b2b8d75d0c1d9e6e7ff212c3d3e1f42cc6fd9e4858f01da1ad'
 
 install=install
 
-_kernmajor="$(pacman -Q linux-E531 | awk '{print $2}' | cut -d - -f1 | cut -d . -f1,2)"
-_extramodules="extramodules-${_kernmajor}-E531"
+_kernmajor="$(pacman -Q linux-e531 | awk '{print $2}' | cut -d - -f1 | cut -d . -f1,2)"
+_extramodules="extramodules-${_kernmajor}-e531"
 _kernver="$(cat /usr/lib/modules/${_extramodules}/version)"
 
 prepare() {

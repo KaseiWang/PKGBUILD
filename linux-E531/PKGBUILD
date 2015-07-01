@@ -1,5 +1,4 @@
-pkgbase=linux-E531               # Build stock -ARCH kernel
-#pkgbase=linux-custom       # Build kernel with a different name
+pkgbase=linux-e531
 _srcname=linux-4.1
 _patchname=patch-4.1.1
 pkgver=4.1.1
@@ -79,7 +78,7 @@ build() {
 }
 
 _package() {
-  pkgdesc="The ${pkgbase/linux/Linux} kernel and modules for ThinkPad E531(i5-3230m GT740M ver)"
+  pkgdesc="The Linux kernel and modules for ThinkPad E531(i5-3230m GT740M ver)"
   [ "${pkgbase}" = "linux" ] && groups=('base')
   depends=('coreutils' 'linux-firmware' 'kmod' 'mkinitcpio>=0.7')
   optdepends=('crda: to set the correct wireless channels of your country')
