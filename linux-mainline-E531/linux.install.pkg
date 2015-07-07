@@ -2,7 +2,7 @@
 # arg 2:  the old package version
 
 KERNEL_NAME=-mainline-E531
-KERNEL_VERSION=4.1.0-1-mainline-E531
+KERNEL_VERSION=4.2.0-1-mainline-E531
 
 post_install () {
   # updating module dependencies
