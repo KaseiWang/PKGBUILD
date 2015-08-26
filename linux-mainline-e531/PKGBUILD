@@ -1,7 +1,7 @@
 pkgbase=linux-mainline-e531
 _srcname=linux-4.1
-_patchname=patch-4.2-rc6
-pkgver=4.2rc6
+_patchname=patch-4.2-rc8
+pkgver=4.2rc8
 pkgrel=1
 arch=('x86_64')
 url="http://www.hurrdurr.org/"
@@ -17,8 +17,8 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         'change-default-console-loglevel.patch'
         )
 sha256sums=('caf51f085aac1e1cea4d00dbbf3093ead07b551fc07b31b2a989c05f8ea72d9f'
-            'afd787da706ce3d20c6587ca8ac498b1e708da87c0b3d1b7f711d107773e377e'
-            'cfe0623547395f3a0d9f002f06104b71f6b14e64539ef686a477aece7658496b'
+            'd2bd54fa107cbe7af4832e50a12ca9ee2e6834fa273c5d1811b1cff7d9fb4fc8'
+            '5697b1480d83590a09d429a8a555c1ebc9f268e296a092035737b2bc44ecec7c'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=(
