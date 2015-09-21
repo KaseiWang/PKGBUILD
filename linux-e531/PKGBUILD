@@ -2,7 +2,7 @@ pkgbase=linux-e531
 _srcname=linux-4.1
 _patchname=patch-4.2
 pkgver=4.2
-pkgrel=2
+pkgrel=3
 groups=('ThinkPad-E531')
 arch=('x86_64')
 url="http://www.hurrdurr.org/"
@@ -17,7 +17,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         'fix-schedule_work()-license.patch')
 sha256sums=('caf51f085aac1e1cea4d00dbbf3093ead07b551fc07b31b2a989c05f8ea72d9f'
             '058cbb4f53d94fbf18153e77138e71b53d38de82697e74a049640e9d496c7d4e'
-            '3abf9da75ddd67751253f0d2eecc5c3c9bcf32e0a78a6ea8db969bc294dd8c42'
+            '27cb0ae10d9ba31abbb37186b3b53b94ee934ee361defa8d4ee073f80685dd26'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99'
             '097e6bfe4a6b28ac03b67b0ea9b9b5c82d7aac9b8e7dc5a1708ab6e076edcd50')
