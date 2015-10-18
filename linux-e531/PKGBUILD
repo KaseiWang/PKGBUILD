@@ -1,7 +1,7 @@
 pkgbase=linux-e531
 _srcname=linux-4.2
 pkgver=4.2.3
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="http://www.kernel.org/"
 license=('GPL2')
@@ -20,7 +20,7 @@ sha256sums=('cf20e044f17588d2a42c8f2a450b0fd84dfdbd579b489d93e9ab7d0e8b45dbeb'
             'SKIP'
             'e0e066f3fc5f310644e9f3f3ede47db7ac040f44782f0a5cf75ce2c940444972'
             'SKIP'
-            '15e85b8767f8012c8d90d871d7c89f2774c369c57d2928f4a58c1a35c3e1e8f2'
+            '78844f01044b919934da43a61cdbf63e767d53933898e03b8dc757a6eb882481'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99'
             '0b1e41ba59ae45f5929963aa22fdc53bc8ffb4534e976cec046269d1a462197b'
