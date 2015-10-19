@@ -1,6 +1,6 @@
 pkgbase=linux-csi-esdc2014
 pkgver=4.1
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="http://www.kernel.org/"
 license=('GPL2')
@@ -13,7 +13,7 @@ source=("https://github.com/dhalperi/linux-80211n-csitool/archive/csitool-${pkgv
         'change-default-console-loglevel.patch')
 sha256sums=('9c03bd16c3e2b8ab534d3aeab6cecd831e228177460c3c0973ffe1341e7fce5b'
             'fc7d6cf839ca853fcf5e91bc527aa01d4688916924806d10252b5cbea837d9d3'
-            'd4ce93b0d2dc8c094b66e67357309b2537f35b45483cdde24c946252da3320fb'
+            'ca7b4d71a681543343fcd3d011bc8478add59aa76f9019cca11d8ea29007d59b'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=(
