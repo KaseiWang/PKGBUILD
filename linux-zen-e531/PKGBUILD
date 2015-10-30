@@ -1,12 +1,12 @@
 pkgbase=linux-zen-e531
 _srcname=linux-4.2
-_zenpatch=ce5fbc12f25d1179209b7987d339bd5b8c6e52ed
-pkgver=4.2.4
+_zenpatch=1a2337cb512ddf5b5395e47298d80324e29ad4a7
+pkgver=4.2.5
 pkgrel=1
 arch=('x86_64')
 url="https://github.com/zen-kernel/zen-kernel"
 license=('GPL2')
-makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc')
+makedepends=('docbook-xsl' 'kmod' 'inetutils' 'bc')
 options=('!strip')
 source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         "https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.sign"
@@ -20,11 +20,11 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         'change-default-console-loglevel.patch')
 sha256sums=('cf20e044f17588d2a42c8f2a450b0fd84dfdbd579b489d93e9ab7d0e8b45dbeb'
             'SKIP'
-            '104ba869111c7ce037fc92646f9da7352412a73e84cde7467f29cd4b973d6e78'
+            'b631eb4e8b4911b31111b0838e00f7c4a1b7689abcd2233609831b638493f4fb'
             'SKIP'
             'fc31299aec3a676c9cade63a9705ae0de85ef6c50f24254c13addbc6607346f5'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
-            '6cbd5fbee5d880b820e4f1d23d7fb63f6e1a22753b4f54ffaf2985ca08405145'
+            '9607de51a3fc24b05fe07a0b3324547a3d6df8546187516b1297377a20d0fc96'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=(
               'ABAF11C65A2970B130ABE3C479BE3E4300411886' # Linus Torvalds
@@ -235,21 +235,7 @@ _package-headers() {
   rm -rf "${pkgdir}"/usr/lib/modules/${_kernver}/build/arch/{alpha,arc,arm,arm26,arm64,avr32,blackfin,c6x,cris,frv,h8300,hexagon,ia64,m32r,m68k,m68knommu,metag,mips,microblaze,mn10300,openrisc,parisc,powerpc,ppc,s390,score,sh,sh64,sparc,sparc64,tile,unicore32,um,v850,xtensa}
 }
 
-_package-docs() {
-  pkgdesc="Kernel hackers manual - HTML documentation that comes with the ${pkgbase/linux/Linux} kernel for ThinkPad E531(i5-3230m GT740M ver)"
-
-  cd "${srcdir}/${_srcname}"
-
-  mkdir -p "${pkgdir}/usr/lib/modules/${_kernver}/build"
-  cp -al Documentation "${pkgdir}/usr/lib/modules/${_kernver}/build"
-  find "${pkgdir}" -type f -exec chmod 444 {} \;
-  find "${pkgdir}" -type d -exec chmod 755 {} \;
-
-  # remove a file already in linux package
-  rm -f "${pkgdir}/usr/lib/modules/${_kernver}/build/Documentation/DocBook/Makefile"
-}
-
-pkgname=("${pkgbase}" "${pkgbase}-headers" "${pkgbase}-docs")
+pkgname=("${pkgbase}" "${pkgbase}-headers")
 for _p in ${pkgname[@]}; do
   eval "package_${_p}() {
     $(declare -f "_package${_p#${pkgbase}}")
