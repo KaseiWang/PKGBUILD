@@ -6,7 +6,6 @@ url="http://802.11ninja.net/lorcon/"
 arch=('i686' 'x86_64')
 license=('GPL')
 depends=('libnl' 'libpcap')
-makedepends=('subversion')
 provides=("lorcon=199")
 source=('git+https://github.com/dhalperi/lorcon-old.git')
 md5sums=('SKIP')
