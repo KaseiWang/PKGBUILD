@@ -9,7 +9,7 @@ _minor=`expr $pkgver : '[0-9]\+\.\([0-9]\+\)'`
 _nxver="${_major}.$((${_minor} + 1))"
 _extramodules="extramodules-$pkgver-e531"
 
-pkgrel=1
+pkgrel=2
 arch=('i686' 'x86_64')
 url="http://www.freedesktop.org/wiki/Software/systemd/kdbus"
 makedepends=('xmlto' 'docbook-xsl' 'libxslt' 'kmod' 'inetutils' 'bc' 'git'
