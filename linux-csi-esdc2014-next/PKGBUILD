@@ -1,13 +1,13 @@
 pkgbase=linux-csi-esdc2014
-_srcver=4.1
 pkgver=4.1.13
-pkgrel=1
+pkgrel=2
+_csiver=4.1
 arch=('x86_64')
 url="https://dhalperi.github.io/linux-80211n-csitool/"
 license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc')
 options=('!strip')
-source=("https://github.com/dhalperi/linux-80211n-csitool/archive/csitool-${_srcver}.tar.gz"
+source=("https://github.com/dhalperi/linux-80211n-csitool/archive/csitool-${_csiver}.tar.gz"
         "https://raw.githubusercontent.com/dhalperi/linux-80211n-csitool-supplementary/master/firmware/iwlwifi-5000-2.ucode.sigcomm2010"
         "https://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.xz"
         'config.x86_64'
@@ -16,7 +16,7 @@ source=("https://github.com/dhalperi/linux-80211n-csitool/archive/csitool-${_src
 sha256sums=('9c03bd16c3e2b8ab534d3aeab6cecd831e228177460c3c0973ffe1341e7fce5b'
             'fc7d6cf839ca853fcf5e91bc527aa01d4688916924806d10252b5cbea837d9d3'
             '1c3ba78cbaa1a260798d6d0d2aa319ff41ae676b443e5bf06ab441436dcdd171'
-            'ca7b4d71a681543343fcd3d011bc8478add59aa76f9019cca11d8ea29007d59b'
+            '54491f17e6f71449020b87ebe1ca48f7a970638ac524511998b8d50b601acd7d'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=(
@@ -27,8 +27,8 @@ validpgpkeys=(
 _kernelname=${pkgbase#linux}
 
 prepare() {
-  mv "${srcdir}/linux-80211n-csitool-csitool-${_srcver}" "${srcdir}/${pkgver}"
-  cd "${srcdir}/${pkgver}"
+  mv "${srcdir}/linux-80211n-csitool-csitool-${_csiver}" "${srcdir}/${_csiver}" 
+  cd "${srcdir}/${_csiver}"
 
   # add upstream patch
   patch -p1 -i "${srcdir}/patch-${pkgver}"
@@ -59,7 +59,7 @@ prepare() {
 }
 
 build() {
-  cd "${srcdir}/${pkgver}"
+  cd "${srcdir}/${_csiver}"
 
   make ${MAKEFLAGS} LOCALVERSION= bzImage modules
 }
@@ -124,7 +124,7 @@ _package() {
   mv "${pkgdir}/lib" "${pkgdir}/usr/"
 
   # add vmlinux
-  install -D -m644 vmlinux "${pkgdir}/usr/lib/modules/${_kernver}/build/vmlinux"
+  install -D -m644 vmlinux "${pkgdir}/usr/lib/modules/${_kernver}/build/vmlinux" 
 }
 
 _package-headers() {
@@ -135,7 +135,7 @@ _package-headers() {
 
   install -dm755 "${pkgdir}/usr/lib/modules/${_kernver}"
 
-  cd "${srcdir}/${pkgver}"
+  cd "${srcdir}/${_csiver}"
   install -D -m644 Makefile \
     "${pkgdir}/usr/lib/modules/${_kernver}/build/Makefile"
   install -D -m644 kernel/Makefile \
