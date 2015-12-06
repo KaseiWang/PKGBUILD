@@ -16,7 +16,7 @@ source=("https://github.com/dhalperi/linux-80211n-csitool/archive/csitool-${_csi
 sha256sums=('9c03bd16c3e2b8ab534d3aeab6cecd831e228177460c3c0973ffe1341e7fce5b'
             'fc7d6cf839ca853fcf5e91bc527aa01d4688916924806d10252b5cbea837d9d3'
             '1c3ba78cbaa1a260798d6d0d2aa319ff41ae676b443e5bf06ab441436dcdd171'
-            '54491f17e6f71449020b87ebe1ca48f7a970638ac524511998b8d50b601acd7d'
+            'bbf1d9f45d9490a8f8ee62d60b375a4830471769bd35881e835e33eb000f4175'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=(
@@ -75,7 +75,7 @@ _package() {
   backup=("etc/mkinitcpio.d/${pkgbase}.preset")
   install=linux.install
 
-  cd "${srcdir}/${pkgver}"
+  cd "${srcdir}/${_csiver}"
 
   KARCH=x86
 
