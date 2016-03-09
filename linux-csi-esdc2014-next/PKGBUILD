@@ -1,6 +1,6 @@
 pkgbase=linux-csi-esdc2014
-pkgver=4.1.13
-pkgrel=2
+pkgver=4.1.19
+pkgrel=1
 _csiver=4.1
 arch=('x86_64')
 url="https://dhalperi.github.io/linux-80211n-csitool/"
@@ -15,8 +15,8 @@ source=("https://github.com/dhalperi/linux-80211n-csitool/archive/csitool-${_csi
         'change-default-console-loglevel.patch')
 sha256sums=('9c03bd16c3e2b8ab534d3aeab6cecd831e228177460c3c0973ffe1341e7fce5b'
             'fc7d6cf839ca853fcf5e91bc527aa01d4688916924806d10252b5cbea837d9d3'
-            '1c3ba78cbaa1a260798d6d0d2aa319ff41ae676b443e5bf06ab441436dcdd171'
-            'bbf1d9f45d9490a8f8ee62d60b375a4830471769bd35881e835e33eb000f4175'
+            'be12d828fd185db6f51c261dd41b2bf30e866ee85d2e2c166c3035d8084f7b8e'
+            'c00d370fa71b7500a0c83f5d74ceaa284d30225107cf5d5acfc42254acf6e948'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=(
