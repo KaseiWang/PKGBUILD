@@ -1,6 +1,6 @@
 pkgbase=linux-e531
 _srcname=linux-4.4
-pkgver=4.4.4
+pkgver=4.5
 pkgrel=1
 arch=('x86_64')
 url="http://www.kernel.org/"
@@ -16,9 +16,9 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         'change-default-console-loglevel.patch')
 sha256sums=('401d7c8fef594999a460d10c72c5a94e9c2e1022f16795ec51746b0d165418b2'
             'SKIP'
-            '9061d8f57cc25d760387c4e6b7d5cceacaa808e8784a3e478012e7c2949853c8'
+            '386c98974eb1b4390c5fabac821316fd444ca3e72254de802361f3ef3e5e0e82'
             'SKIP'
-            'a3532fc2e79dc1fd7b020e4bd2c121a9536635dea5ce8eff30612a6d160367db'
+            '228afed1c5b597e5c67fe2faa65b0ce717dc837462907bc02daf594a99875d6d'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=(
