@@ -1,19 +1,22 @@
 pkgbase=linux-csi-esdc2014
-pkgver=4.1
-pkgrel=2
+pkgver=4.1.20
+pkgrel=1
+_csiver=4.1
 arch=('x86_64')
 url="https://dhalperi.github.io/linux-80211n-csitool/"
 license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc')
 options=('!strip')
-source=("https://github.com/dhalperi/linux-80211n-csitool/archive/csitool-${pkgver}.tar.gz"
+source=("https://github.com/dhalperi/linux-80211n-csitool/archive/csitool-${_csiver}.tar.gz"
         "https://raw.githubusercontent.com/dhalperi/linux-80211n-csitool-supplementary/master/firmware/iwlwifi-5000-2.ucode.sigcomm2010"
+        "https://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.xz"
         'config.x86_64'
         'linux.preset'
         'change-default-console-loglevel.patch')
 sha256sums=('9c03bd16c3e2b8ab534d3aeab6cecd831e228177460c3c0973ffe1341e7fce5b'
             'fc7d6cf839ca853fcf5e91bc527aa01d4688916924806d10252b5cbea837d9d3'
-            'ca7b4d71a681543343fcd3d011bc8478add59aa76f9019cca11d8ea29007d59b'
+            'c9cb7370fe790df645a13967919628e5bcf1ff333f334fedac6a3c474714c45d'
+            'a7d1a87284bbbdaca6099dc184694c4c9af8b83980ab503ce3de2e3f55d7628a'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=(
@@ -24,8 +27,11 @@ validpgpkeys=(
 _kernelname=${pkgbase#linux}
 
 prepare() {
-  mv "${srcdir}/linux-80211n-csitool-csitool-${pkgver}" "${srcdir}/${pkgver}" 
-  cd "${srcdir}/${pkgver}"
+  mv "${srcdir}/linux-80211n-csitool-csitool-${_csiver}" "${srcdir}/${_csiver}" 
+  cd "${srcdir}/${_csiver}"
+
+  # add upstream patch
+  patch -p1 -i "${srcdir}/patch-${pkgver}"
 
   # set DEFAULT_CONSOLE_LOGLEVEL to 4 (same value as the 'quiet' kernel param)
   # remove this when a Kconfig knob is made available by upstream
@@ -53,7 +59,7 @@ prepare() {
 }
 
 build() {
-  cd "${srcdir}/${pkgver}"
+  cd "${srcdir}/${_csiver}"
 
   make ${MAKEFLAGS} LOCALVERSION= bzImage modules
 }
@@ -69,7 +75,7 @@ _package() {
   backup=("etc/mkinitcpio.d/${pkgbase}.preset")
   install=linux.install
 
-  cd "${srcdir}/${pkgver}"
+  cd "${srcdir}/${_csiver}"
 
   KARCH=x86
 
@@ -129,7 +135,7 @@ _package-headers() {
 
   install -dm755 "${pkgdir}/usr/lib/modules/${_kernver}"
 
-  cd "${srcdir}/${pkgver}"
+  cd "${srcdir}/${_csiver}"
   install -D -m644 Makefile \
     "${pkgdir}/usr/lib/modules/${_kernver}/build/Makefile"
   install -D -m644 kernel/Makefile \
