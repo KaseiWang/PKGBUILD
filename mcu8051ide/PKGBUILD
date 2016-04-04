@@ -1,0 +1,30 @@
+# Author: Martin Osmera <mailto:martin.osmera@gmail.com>
+# Contributor: KaseiWang <kaseionearth@gmail.com>
+pkgname=mcu8051ide
+pkgver=1.4.10
+pkgrel=1
+pkgdesc="Graphical IDE for microcontrollers based on 8051."
+arch=('any')
+url="http://mcu8051ide.sourceforge.net"
+license=('GPL2')
+install=$pkgname.install
+depends=('bwidget>=1.8' 'tcllib>=1.11' 'itcl3>=3.4' 'tcl>=8.5.9' 'tdom>=0.8' 'tk>=8.5.9' 'tkimg>=1.4' 'tclx>=8.4' 'shared-mime-info' 'desktop-file-utils')
+makedepends=('cmake>=2.8')
+optdepends=('sdcc: full support for C language'
+'hunspell: support for spell checking in comments'
+'rxvt-unicode: terminal emulator in the IDE'
+'doxygen: support for automated generation of documentation files'
+'indent: automated indentation of C source files')
+source=("http://downloads.sourceforge.net/mcu8051ide/${pkgname}-${pkgver}.tar.gz")
+sha1sums=('10b1a4d4484c71d68dc3c6f8e7fb0b18fcff9bfc')
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  cmake -DCMAKE_INSTALL_PREFIX=/usr .
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}/" install
+}
