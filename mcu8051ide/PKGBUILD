@@ -15,7 +15,7 @@ optdepends=('sdcc: full support for C language'
 'rxvt-unicode: terminal emulator in the IDE'
 'doxygen: support for automated generation of documentation files'
 'indent: automated indentation of C source files')
-source=("http://downloads.sourceforge.net/mcu8051ide/${pkgname}-${pkgver}.tar.gz")
+source=("http://www.moravia-microsystems.com/download/${pkgname}/${pkgname}/${pkgver}/${pkgname}-${pkgver}.tar.gz")
 sha1sums=('10b1a4d4484c71d68dc3c6f8e7fb0b18fcff9bfc')
 
 build() {
