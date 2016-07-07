@@ -1,0 +1,22 @@
+# Contributor: Kasei Wang <kaseionearth at gmail>
+pkgname=libgatt
+pkgver=0.0.0.a16778c
+pkgrel=1
+pkgdesc="Library for Bluetooth 4.0 LE GATT access"
+arch=(x86_64 i686)
+url="https://github.com/jacklund/libgatt"
+license=('GPL2')
+depends=('bluez-utils')
+optdepends=()
+source=("$pkgname::git+https://github.com/jacklund/libgatt.git#commit=a16778c")
+sha256sums=('SKIP')
+
+build() {
+  cd "$srcdir/$pkgname"
+  ./configure --prefix=/usr
+  make
+}
+package() {
+  cd "$srcdir/$pkgname"
+  make DESTDIR="$pkgdir/" install 
+}
