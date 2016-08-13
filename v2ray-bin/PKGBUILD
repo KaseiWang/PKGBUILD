@@ -1,7 +1,7 @@
 # Maintainer: Kasei Wang <cnsdwpc at gmail.com>
 _pkgname=v2ray
 pkgname=$_pkgname-bin
-pkgver=1.22
+pkgver=1.23.1
 pkgrel=1
 pkgdesc="A platform for building proxy applications to bypass certain network restrictions."
 arch=("i686" "x86_64")
@@ -20,7 +20,7 @@ if [ "$CARCH" = "x86_64" ]; then
 fi
 source=("https://github.com/v2ray/v2ray-core/releases/download/v$pkgver/v2ray-linux-$_arch.zip"
         "v2ray@.service")
-sha256sums=('410960ddbc66ba49e5f628ce1a3af8791041caf0c8f5e77f18c2af3e92365bc6'
+sha256sums=('518d4a8a842626072ff5df5995215aca842d3fd0ee77b7ee07c3947d002df6d1'
             '2bbb242616de52218b1a53dab217abbfa85bb8aac4b39b69f82ff02f7d7b8fe0')
 
 package() {
