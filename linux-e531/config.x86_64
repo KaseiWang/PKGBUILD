@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 4.9.8-1-ck1 Kernel Configuration
+# Linux/x86 4.9.9-1-ck1 Kernel Configuration
 #
 CONFIG_64BIT=y
 CONFIG_X86_64=y
@@ -1248,8 +1248,8 @@ CONFIG_NET_SCHED=y
 # CONFIG_NET_SCH_CHOKE is not set
 # CONFIG_NET_SCH_QFQ is not set
 CONFIG_NET_SCH_CODEL=m
-CONFIG_NET_SCH_FQ_CODEL=m
-CONFIG_NET_SCH_FQ=y
+CONFIG_NET_SCH_FQ_CODEL=y
+CONFIG_NET_SCH_FQ=m
 # CONFIG_NET_SCH_HHF is not set
 # CONFIG_NET_SCH_PIE is not set
 # CONFIG_NET_SCH_INGRESS is not set
