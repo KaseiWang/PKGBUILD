@@ -2,7 +2,7 @@ pkgbase=linux-e531
 _srcname=linux-4.9
 _srcver=4.9
 pkgver=4.9.9
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="http://www.kernel.org/"
 license=('GPL2')
@@ -25,7 +25,7 @@ sha256sums=('029098dcffab74875e086ae970e3828456838da6e0ba22ce3f64ef764f3d7f1a'
             '91ae8ac0cd2086067e0ccac28d360d9ed0b3e845f584ff9af8e21e098db7bd72'
             '5b9d8f4ef73f87e8595de66ccc38bad86e290fd9453bd536b9cc950f5344b82d'
             '4ffa08f00cab1d2a97d0fee3f42462c26cc66b6d75158940cc1718cd9fe1daf9'
-            'be7dbba9586a4469be116ab55b1f72e599141f6bed8d5752756f9da9ae4808b7'
+            '62ba5087b5ebea96a3a9e2bba06f2102b1dbbbad20bd03db27efd2e5a5156b8d'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=(
