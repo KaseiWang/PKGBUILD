@@ -1,7 +1,7 @@
 pkgbase=linux-e531
-_srcname=linux-4.9
-_srcver=4.9
-pkgver=4.9.9
+_srcname=linux-4.10
+_srcver=4.10
+pkgver=4.10
 pkgrel=2
 arch=('x86_64')
 url="http://www.kernel.org/"
@@ -10,20 +10,16 @@ makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc')
 options=('!strip')
 source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         "https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.sign"
-        "https://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.xz"
-        "https://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.sign"
-        "http://kerneldedup.org/download/uksm/0.1.2.5/uksm-0.1.2.5-for-v${_srcver}.1+.patch"
+        #"https://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.xz"
+        #"https://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.sign"
         "http://ck.kolivas.org/patches/4.0/${_srcver}/${_srcver}-ck1/patch-${_srcver}-ck1.xz"
         "enable_additional_cpu_optimizations.patch"
         'config.x86_64'
         'linux.preset'
         'change-default-console-loglevel.patch')
-sha256sums=('029098dcffab74875e086ae970e3828456838da6e0ba22ce3f64ef764f3d7f1a'
+sha256sums=('3c95d9f049bd085e5c346d2c77f063b8425f191460fcd3ae9fe7e94e0477dc4b'
             'SKIP'
-            'ec97e3bf8585865d409a804316b276a6b4e4939286de9757f99bfb41cf112078'
-            'SKIP'
-            '91ae8ac0cd2086067e0ccac28d360d9ed0b3e845f584ff9af8e21e098db7bd72'
-            '5b9d8f4ef73f87e8595de66ccc38bad86e290fd9453bd536b9cc950f5344b82d'
+            '1913eeb921bbef3733b53f4004a3013289fa85a26409610bb14fcff3bbd7ef72'
             '4ffa08f00cab1d2a97d0fee3f42462c26cc66b6d75158940cc1718cd9fe1daf9'
             '62ba5087b5ebea96a3a9e2bba06f2102b1dbbbad20bd03db27efd2e5a5156b8d'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
@@ -39,17 +35,11 @@ prepare() {
   cd "${srcdir}/${_srcname}"
 
   # add upstream patch
-  patch -p1 -i "${srcdir}/patch-${pkgver}"
-  patch -p1 -i "${srcdir}/uksm-0.1.2.5-for-v${_srcver}.1+.patch"
+  # patch -p1 -i "${srcdir}/patch-${pkgver}"
   patch -p1 -i "${srcdir}/patch-${_srcver}-ck1"
 
   # add latest fixes from stable queue, if needed
   # http://git.kernel.org/?p=linux/kernel/git/stable/stable-queue.git
-
-  # set DEFAULT_CONSOLE_LOGLEVEL to 4 (same value as the 'quiet' kernel param)
-  # remove this when a Kconfig knob is made available by upstream
-  # (relevant patch sent upstream: https://lkml.org/lkml/2011/7/26/227)
-  patch -p1 -i "${srcdir}/change-default-console-loglevel.patch"
 
   cat "${srcdir}/config.x86_64" > ./.config
 
