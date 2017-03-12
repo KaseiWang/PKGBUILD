@@ -1,8 +1,8 @@
 pkgbase=linux-e531
 _srcname=linux-4.10
 _srcver=4.10
-pkgver=4.10.1
-pkgrel=2
+pkgver=4.10.2
+pkgrel=1
 arch=('x86_64')
 url="http://www.kernel.org/"
 license=('GPL2')
@@ -12,6 +12,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         "https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.sign"
         "https://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.xz"
         "https://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.sign"
+        "http://kerneldedup.org/download/uksm/0.1.2.6/uksm-0.1.2.6-for-v${_srcver}.patch"
         "http://ck.kolivas.org/patches/4.0/${_srcver}/${_srcver}-ck1/patch-${_srcver}-ck1.xz"
         "enable_additional_cpu_optimizations.patch"
         'config.x86_64'
@@ -19,11 +20,12 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         'change-default-console-loglevel.patch')
 sha256sums=('3c95d9f049bd085e5c346d2c77f063b8425f191460fcd3ae9fe7e94e0477dc4b'
             'SKIP'
-            'da560125aa350f76f0e4a5b9373a0d0a1c27ccefe3b7bd9231724f3a3c4ebb9e'
+            '3e2c2ba9dd2c421ea4f7e10150cc5f5fa5fdbaffef5377988fabb7d6f7d65bab'
             'SKIP'
+            '6752da3c575963f4c95b1df66d8a6fd96d47b7b88d0cf2b0b002dc23d6f8833b'
             '1913eeb921bbef3733b53f4004a3013289fa85a26409610bb14fcff3bbd7ef72'
             '4ffa08f00cab1d2a97d0fee3f42462c26cc66b6d75158940cc1718cd9fe1daf9'
-            'f1f1102e658d15469a647347b0571f13296fb34816cfaea1f3432ff1f5cec344'
+            '7957b7a6f41829fcbc5eabb6a0f4f51fcb95c7f488994ef79b8e564f1f42a2a1'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=(
@@ -38,6 +40,8 @@ prepare() {
 
   # add upstream patch
   patch -p1 -i "${srcdir}/patch-${pkgver}"
+  patch -p1 -i "${srcdir}/enable_additional_cpu_optimizations.patch"
+  patch -p1 -i "${srcdir}/uksm-0.1.2.6-for-v${_srcver}.patch"
   patch -p1 -i "${srcdir}/patch-${_srcver}-ck1"
 
   # add latest fixes from stable queue, if needed
