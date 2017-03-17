@@ -1,7 +1,7 @@
 pkgbase=linux-e531
 _srcname=linux-4.10
 _srcver=4.10
-pkgver=4.10.2
+pkgver=4.10.3
 pkgrel=1
 arch=('x86_64')
 url="http://www.kernel.org/"
@@ -20,7 +20,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         'change-default-console-loglevel.patch')
 sha256sums=('3c95d9f049bd085e5c346d2c77f063b8425f191460fcd3ae9fe7e94e0477dc4b'
             'SKIP'
-            '3e2c2ba9dd2c421ea4f7e10150cc5f5fa5fdbaffef5377988fabb7d6f7d65bab'
+            '17459007bae81a8cda00f0ce74dfbc70c1afc5b99133649e664045e34c5d63b5'
             'SKIP'
             '6752da3c575963f4c95b1df66d8a6fd96d47b7b88d0cf2b0b002dc23d6f8833b'
             '1913eeb921bbef3733b53f4004a3013289fa85a26409610bb14fcff3bbd7ef72'
