@@ -1,7 +1,7 @@
 pkgbase=linux-e531
 _srcname=linux-4.10
 _srcver=4.10
-pkgver=4.10.4
+pkgver=4.10.5
 pkgrel=1
 arch=('x86_64')
 url="http://www.kernel.org/"
@@ -20,12 +20,12 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         'change-default-console-loglevel.patch')
 sha256sums=('3c95d9f049bd085e5c346d2c77f063b8425f191460fcd3ae9fe7e94e0477dc4b'
             'SKIP'
-            '68e935fbe1c3faaf186824a44b79a26f1ab85f04a1dade2e5bce5f8c2941624d'
+            '03c64409653b19d39af54c8781fde0a3747ba16577c9e5b0e1031e5d8fc29db6'
             'SKIP'
             '6752da3c575963f4c95b1df66d8a6fd96d47b7b88d0cf2b0b002dc23d6f8833b'
             '1913eeb921bbef3733b53f4004a3013289fa85a26409610bb14fcff3bbd7ef72'
             '4ffa08f00cab1d2a97d0fee3f42462c26cc66b6d75158940cc1718cd9fe1daf9'
-            '7957b7a6f41829fcbc5eabb6a0f4f51fcb95c7f488994ef79b8e564f1f42a2a1'
+            'd30001d71c9da03dc164f91e54bc75adad6b247815b89f89e9d1eade079f0582'
             'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=(
