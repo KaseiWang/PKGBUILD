@@ -1,7 +1,7 @@
 pkgbase=linux-e531
 _srcname=linux-4.10
 _srcver=4.10
-pkgver=4.10.5
+pkgver=4.10.6
 pkgrel=1
 arch=('x86_64')
 url="http://www.kernel.org/"
@@ -16,18 +16,16 @@ source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         "http://ck.kolivas.org/patches/4.0/${_srcver}/${_srcver}-ck1/patch-${_srcver}-ck1.xz"
         "enable_additional_cpu_optimizations.patch"
         'config.x86_64'
-        'linux.preset'
-        'change-default-console-loglevel.patch')
+        'linux.preset')
 sha256sums=('3c95d9f049bd085e5c346d2c77f063b8425f191460fcd3ae9fe7e94e0477dc4b'
             'SKIP'
-            '03c64409653b19d39af54c8781fde0a3747ba16577c9e5b0e1031e5d8fc29db6'
+            '99ecfe76c427aeebfb0f02fe130264db1d22c87e3f7efd34a231fe6d5c50d75d'
             'SKIP'
             '6752da3c575963f4c95b1df66d8a6fd96d47b7b88d0cf2b0b002dc23d6f8833b'
             '1913eeb921bbef3733b53f4004a3013289fa85a26409610bb14fcff3bbd7ef72'
             '4ffa08f00cab1d2a97d0fee3f42462c26cc66b6d75158940cc1718cd9fe1daf9'
             'd30001d71c9da03dc164f91e54bc75adad6b247815b89f89e9d1eade079f0582'
-            'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c'
-            '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
+            'f0d90e756f14533ee67afda280500511a62465b4f76adcc5effa95a40045179c')
 validpgpkeys=(
               'ABAF11C65A2970B130ABE3C479BE3E4300411886' # Linus Torvalds
               '647F28654894E3BD457199BE38DBBDC86092693E' # Greg Kroah-Hartman
